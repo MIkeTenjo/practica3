@@ -55,7 +55,7 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
         if (pertenece(elemento)) {
             return;
         }
-        T[] nuevosElem = UtilArreglos.crearArregloGenerico(elementos, elementos.length);
+        T[] nuevosElem = UtilArreglos.crearArregloGenerico(elementos, elementos.length + 1);
         for (int i = 0; i < elementos.length; i++) {
             nuevosElem[i] = elementos[i];
         }
@@ -74,7 +74,7 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
 
     public Conjunto<T> union(Conjunto<T> c) {
         T[] unionaux = UtilArreglos.crearArregloGenerico(elementos, c.obtenerCardinalidad() + elementos.length);
-        int i;
+        int i = 0;
         for (T t : elementos) {
             unionaux[i] = elementos[i];
             i++;
@@ -95,7 +95,7 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
     public Conjunto<T> interseccion(Conjunto<T> c) {
         int n = Math.max(c.obtenerCardinalidad(), elementos.length);
         T[] interseccion = UtilArreglos.crearArregloGenerico(elementos, n);
-        int m;
+        int m = 0;
         for (T t : c) {
             if (pertenece(t)) {
                 interseccion[m] = t;  
