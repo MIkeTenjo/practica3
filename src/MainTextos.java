@@ -60,7 +60,7 @@ public class MainTextos {
             System.out.println("Las palabras que aparecen en ambos archivos son: ");
 
             for (String string : c3) {
-                System.out.println(string);
+                System.out.println(string );
             }
 
 
